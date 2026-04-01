@@ -38,7 +38,7 @@ def _worker(run_id: int, audio_replies: list[bytes], timeout_sec: float, queue: 
     t0 = time.monotonic()
     try:
         result = asyncio.run(run_single(audio_replies, timeout_sec, on_event=on_event))
-    except Exception as exc:
+    except BaseException as exc:
         result = {"bug": False, "transcript": str(exc)}
     elapsed = time.monotonic() - t0
 

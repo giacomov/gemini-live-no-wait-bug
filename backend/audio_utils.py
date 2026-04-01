@@ -82,6 +82,9 @@ class AudioConverter:
             if watcher.is_set():
                 await session.send_realtime_input(media=Blob(data=chunk, mime_type="audio/pcm;rate=16000"))
             else:
+
+                await session.send_realtime_input(media=Blob(data=_SILENCE, mime_type="audio/pcm;rate=16000"))
+                
                 return False
 
         await session.send_realtime_input(media=Blob(data=_SILENCE, mime_type="audio/pcm;rate=16000"))
