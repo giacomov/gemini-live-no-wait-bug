@@ -1,0 +1,15 @@
+# Python
+__pychache__/
+backend/__pycache__/
+backend/*.py[cod]
+backend/.venv/
+backend/dist/
+
+# Node
+frontend/node_modules/
+
+# Env
+.env
+
+# uv
+.uv/
