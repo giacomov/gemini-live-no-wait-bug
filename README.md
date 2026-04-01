@@ -1,6 +1,10 @@
 # gemini-live-bug
 
-Reproducer for a Gemini Live API bug where the model calls `continue_on` without waiting for the user to reply. The model asks "Are you ready to continue?" then immediately fires the tool call before the user has a chance to answer.
+Reproducer for a Gemini Live API bug where the instructions say to ask a question, and the model asks it but then does not wait for an answer. In this example, it immediately call a tool to close the conversation (`continue_on`) without waiting for the user to reply. In other words, the model asks "Are you ready to continue?" then immediately fires the tool call before the user has a chance to answer.
+
+This bug is reported in several places, like here: https://github.com/google-gemini/live-api-web-console/issues/139.
+
+<img width="1283" height="495" alt="Screenshot 2026-03-31 at 9 17 56 PM" src="https://github.com/user-attachments/assets/5b154ef7-c48b-4fd5-bdac-cce1335baf7e" />
 
 ## What it does
 
